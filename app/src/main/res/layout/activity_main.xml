@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- 標題欄 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#43a047"
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/icon_return"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4.7"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="大亨小傳(The Great Gatsby)中文字幕(Yo!MOE看電影預告學英文)"
+                android:textColor="#ffffff"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_share"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 影片 -->
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youTubePlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#161616">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_margin="16dp"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:id="@+id/englishContentTextView"
+                android:text="New york, 1922"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:id="@+id/twContentTextView"
+                android:text="紐約 1992年"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:visibility="invisible"
+            android:id="@+id/scheduleIndicatorSeekBar"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:isb_indicator_color="#00212121"
+            app:isb_indicator_text_color="#00ffffff"
+            app:isb_indicator_text_size="18sp"
+            app:isb_max="10000"
+            app:isb_min="0"
+            app:isb_thumb_color="#ffffff"
+            app:isb_thumb_size="15dp"
+            app:isb_tick_marks_size="13dp"
+            app:isb_tick_texts_color="@color/colorAccent"
+            app:isb_tick_texts_size="15sp"
+            app:isb_ticks_count="1"
+            app:isb_track_background_color="#212121"
+            app:isb_track_background_size="2dp"
+            app:isb_track_progress_color="#ffffff"
+            app:isb_track_progress_size="3dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/playLinearLayout"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:id="@+id/playImageView"
+                    android:src="@drawable/icon_play"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/previousLinearLayout"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:id="@+id/previousImageView"
+                    android:src="@drawable/icon_previous_not_clickable"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cycleLinearLayout"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:id="@+id/cycleImageView"
+                    android:src="@drawable/icon_cycle_not_enabled"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nextLinearLayout"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:id="@+id/nextImageView"
+                    android:src="@drawable/icon_next_clickable"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
